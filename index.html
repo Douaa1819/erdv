@@ -31,12 +31,18 @@
     <header id="header" class="bg-white border-b border-gray-200 p-5">
         <div class="max-w-7xl mx-auto flex items-center justify-between">
             <div class="flex items-center space-x-8">
-                <div class="flex items-center space-x-3">
+                <a href="index.html" class="flex items-center space-x-3 text-black no-underline hover:opacity-80">
                     <i class="fas fa-calendar-check text-2xl text-black"></i>
                     <h1 class="text-2xl font-bold text-black">E-RDV</h1>
-                </div>
-                <nav class="hidden md:flex space-x-6">
-
+                </a>
+                <nav class="hidden lg:flex flex-wrap gap-x-5 gap-y-2 items-center text-sm md:text-base">
+                    <a href="index.html" class="text-black hover:text-gray-600 font-medium">Home</a>
+                    <a href="booking/personal-info.html" class="text-black hover:text-gray-600 font-medium">Book</a>
+                    <a href="management/appointments.html" class="text-black hover:text-gray-600 font-medium">Manage</a>
+                    <a href="dashboards/it-admin.html" class="text-gray-600 hover:text-black font-medium">IT Admin</a>
+                    <a href="dashboards/branch-manager.html" class="text-gray-600 hover:text-black font-medium">Branch</a>
+                    <a href="dashboards/helpdesk.html" class="text-gray-600 hover:text-black font-medium">Helpdesk</a>
+                    <a href="dashboards/day.html" class="text-gray-600 hover:text-black font-medium">Day view</a>
                 </nav>
             </div>
             <div class="flex items-center space-x-4">
@@ -55,14 +61,14 @@
                 <h2 class="text-5xl font-bold text-black leading-tight">Welcome to E-RDV Service Portal</h2>
                 <p class="text-xl text-gray-700 leading-relaxed">Book your appointments seamlessly through our web platform or WhatsApp. Select your preferred branch, service type, and time slot with real-time availability.</p>
                 <div class="flex space-x-4">
-                    <button class="bg-black text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+                    <a href="booking/personal-info.html" class="inline-flex items-center bg-black text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors no-underline">
                         <i class="fas fa-calendar-plus mr-2"></i>
                         Book Appointment
-                    </button>
-                    <button class="border border-black text-black px-8 py-4 rounded-lg font-semibold hover:bg-beige-dark transition-colors">
+                    </a>
+                    <a href="booking/personal-info.html" class="inline-flex items-center border border-black text-black px-8 py-4 rounded-lg font-semibold hover:bg-beige-dark transition-colors no-underline">
                         <i class="fab fa-whatsapp mr-2"></i>
                         WhatsApp Booking
-                    </button>
+                    </a>
                 </div>
             </div>
             <div class="flex justify-center">
@@ -117,9 +123,9 @@
                         <h4 class="text-2xl font-bold text-black">New Appointment</h4>
                     </div>
                     <p class="text-gray-600 mb-6">Book a new appointment by selecting your branch, service type, and preferred time slot.</p>
-                    <button class="w-full bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+                    <a href="booking/personal-info.html" class="block w-full text-center bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors no-underline">
                         Start Booking Process
-                    </button>
+                    </a>
                 </div>
                 <div id="management-card" class="bg-white p-8 rounded-xl border border-gray-200">
                     <div class="flex items-center mb-6">
@@ -129,9 +135,9 @@
                         <h4 class="text-2xl font-bold text-black">Manage Appointments</h4>
                     </div>
                     <p class="text-gray-600 mb-6">Reschedule, cancel, or view your existing appointments with ease.</p>
-                    <button class="w-full border border-black text-black py-3 rounded-lg font-semibold hover:bg-beige-dark transition-colors">
+                    <a href="management/appointments.html" class="block w-full text-center border border-black text-black py-3 rounded-lg font-semibold hover:bg-beige-dark transition-colors no-underline">
                         Access Management
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
