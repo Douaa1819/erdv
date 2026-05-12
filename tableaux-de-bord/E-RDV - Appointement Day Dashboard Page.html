@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        ::-webkit-scrollbar { display: none;}
+        * { font-family: 'Poppins', sans-serif; }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'beige-light': '#FAFAE6',
+                        'beige-medium': '#F5F5DC',
+                        'beige-dark': '#EEE5DE'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-beige-light">
+
+    <!-- Header -->
+    <header id="header" class="bg-white border-b border-gray-200 p-5">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-8">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-calendar-check text-2xl text-black"></i>
+                    <h1 class="text-2xl font-bold text-black">E-RDV</h1>
+                </div>
+                <nav class="hidden md:flex space-x-6">
+                    <span class="text-black hover:text-gray-600 font-medium cursor-pointer">Daily Dashboard</span>
+                    <span class="text-black hover:text-gray-600 font-medium cursor-pointer">Client Management</span>
+                    <span class="text-black hover:text-gray-600 font-medium cursor-pointer">Service Tracking</span>
+                    <span class="text-black hover:text-gray-600 font-medium cursor-pointer">Reports</span>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-2 bg-beige-medium px-3 py-2 rounded-lg">
+                    <i class="fas fa-calendar text-black"></i>
+                    <span class="font-medium text-black">Today: Dec 15, 2024</span>
+                </div>
+                <button class="p-2 rounded-lg border border-gray-200 hover:bg-beige-medium">
+                    <i class="fas fa-bell text-black"></i>
+                </button>
+                <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" alt="Staff Avatar" class="w-10 h-10 rounded-full">
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard -->
+    <div class="max-w-7xl mx-auto px-5 py-8">
+        
+        <!-- Status Overview Cards -->
+        <section id="status-overview" class="grid grid-cols-4 gap-6 mb-8">
+            <div id="total-appointments" class="bg-white p-6 rounded-xl border border-gray-200">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="w-12 h-12 bg-black rounded-lg flex items-center justify-center">
+                        <i class="fas fa-calendar-day text-white text-xl"></i>
+                    </div>
+                    <span class="text-3xl font-bold text-black">24</span>
+                </div>
+                <h3 class="font-semibold text-black mb-1">Total Appointments</h3>
+                <p class="text-sm text-gray-600">Today's scheduled visits</p>
+            </div>
+            
+            <div id="checked-in" class="bg-white p-6 rounded-xl border border-gray-200">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-check text-white text-xl"></i>
+                    </div>
+                    <span class="text-3xl font-bold text-green-600">8</span>
+                </div>
+                <h3 class="font-semibold text-black mb-1">Checked In</h3>
+                <p class="text-sm text-gray-600">Currently in service</p>
+            </div>
+            
+            <div id="waiting" class="bg-white p-6 rounded-xl border border-gray-200">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-clock text-white text-xl"></i>
+                    </div>
+                    <span class="text-3xl font-bold text-yellow-600">5</span>
+                </div>
+                <h3 class="font-semibold text-black mb-1">Waiting</h3>
+                <p class="text-sm text-gray-600">In queue</p>
+            </div>
+            
+            <div id="completed" class="bg-white p-6 rounded-xl border border-gray-200">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-check-circle text-white text-xl"></i>
+                    </div>
+                    <span class="text-3xl font-bold text-blue-600">11</span>
+                </div>
+                <h3 class="font-semibold text-black mb-1">Completed</h3>
+                <p class="text-sm text-gray-600">Services finished</p>
+            </div>
+        </section>
+
+        <!-- Main Content Grid -->
+        <div class="grid grid-cols-3 gap-8">
+            
+            <!-- Client Identification Panel -->
+            <div id="client-identification" class="col-span-2 bg-white rounded-xl border border-gray-200 p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-2xl font-bold text-black">Client Identification</h2>
+                    <div class="flex space-x-3">
+                        <button class="px-4 py-2 bg-beige-medium text-black rounded-lg font-medium hover:bg-beige-dark">
+                            <i class="fas fa-qrcode mr-2"></i>QR Scan
+                        </button>
+                        <button class="px-4 py-2 bg-black text-white rounded-lg font-medium hover:bg-gray-800">
+                            <i class="fas fa-search mr-2"></i>Manual Search
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Search Bar -->
+                <div id="search-section" class="mb-6">
+                    <div class="relative">
+                        <input type="text" placeholder="Enter appointment ID, phone number, or name..." class="w-full p-4 border border-gray-200 rounded-lg pl-12 text-black placeholder-gray-500">
+                        <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    </div>
+                </div>
+                
+                <!-- Current Appointments List -->
+                <div id="appointments-list" class="space-y-4">
+                    <div class="flex items-center justify-between p-4 bg-beige-light rounded-lg border-l-4 border-green-500">
+                        <div class="flex items-center space-x-4">
+                            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg" alt="Client" class="w-12 h-12 rounded-full">
+                            <div>
+                                <h4 class="font-semibold text-black">Sarah Johnson</h4>
+                                <p class="text-sm text-gray-600">ID: #RDV-2024-001 | 09:30 AM</p>
+                                <p class="text-sm text-green-600 font-medium">Currently in Service</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">In Progress</span>
+                            <button class="p-2 text-black hover:bg-white rounded-lg">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-between p-4 bg-beige-light rounded-lg border-l-4 border-yellow-500">
+                        <div class="flex items-center space-x-4">
+                            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg" alt="Client" class="w-12 h-12 rounded-full">
+                            <div>
+                                <h4 class="font-semibold text-black">Michael Chen</h4>
+                                <p class="text-sm text-gray-600">ID: #RDV-2024-002 | 10:00 AM</p>
+                                <p class="text-sm text-yellow-600 font-medium">Waiting in Queue</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Waiting</span>
+                            <button class="px-4 py-2 bg-black text-white rounded-lg text-sm hover:bg-gray-800">
+                                Check In
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-between p-4 bg-beige-light rounded-lg border-l-4 border-gray-400">
+                        <div class="flex items-center space-x-4">
+                            <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-7.jpg" alt="Client" class="w-12 h-12 rounded-full">
+                            <div>
+                                <h4 class="font-semibold text-black">Emma Davis</h4>
+                                <p class="text-sm text-gray-600">ID: #RDV-2024-003 | 10:30 AM</p>
+                                <p class="text-sm text-gray-600 font-medium">Not Yet Arrived</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm font-medium">Scheduled</span>
+                            <button class="p-2 text-black hover:bg-white rounded-lg">
+                                <i class="fas fa-phone"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Service Status Tracking -->
+            <div id="service-tracking" class="bg-white rounded-xl border border-gray-200 p-6">
+                <h2 class="text-xl font-bold text-black mb-6">Live Service Status</h2>
+                
+                <!-- Active Services -->
+                <div id="active-services" class="space-y-4 mb-6">
+                    <div class="p-4 bg-green-50 rounded-lg border border-green-200">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="font-semibold text-black">Service Room A</h4>
+                            <span class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-1">Sarah Johnson</p>
+                        <p class="text-xs text-green-600 font-medium">Started: 09:35 AM</p>
+                        <div class="mt-2 bg-green-200 rounded-full h-2">
+                            <div class="bg-green-500 h-2 rounded-full w-3/4"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-4 bg-blue-50 rounded-lg border border-blue-200">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="font-semibold text-black">Service Room B</h4>
+                            <span class="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-1">James Wilson</p>
+                        <p class="text-xs text-blue-600 font-medium">Started: 09:45 AM</p>
+                        <div class="mt-2 bg-blue-200 rounded-full h-2">
+                            <div class="bg-blue-500 h-2 rounded-full w-1/2"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Actions -->
+                <div id="quick-actions-panel" class="border-t border-gray-200 pt-6">
+                    <h3 class="font-semibold text-black mb-4">Quick Actions</h3>
+                    <div class="space-y-3">
+                        <button class="w-full flex items-center justify-center space-x-2 p-3 bg-beige-medium text-black rounded-lg hover:bg-beige-dark">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Walk-in Registration</span>
+                        </button>
+                        <button class="w-full flex items-center justify-center space-x-2 p-3 border border-black text-black rounded-lg hover:bg-beige-light">
+                            <i class="fas fa-clock"></i>
+                            <span>Update Wait Time</span>
+                        </button>
+                        <button class="w-full flex items-center justify-center space-x-2 p-3 border border-black text-black rounded-lg hover:bg-beige-light">
+                            <i class="fas fa-bell"></i>
+                            <span>Send Notifications</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Recent Activity Log -->
+        <section id="activity-log" class="mt-8 bg-white rounded-xl border border-gray-200 p-6">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-xl font-bold text-black">Recent Activity</h2>
+                <button class="text-black hover:text-gray-600 font-medium">
+                    View All <i class="fas fa-arrow-right ml-1"></i>
+                </button>
+            </div>
+            
+            <div id="activity-timeline" class="space-y-4">
+                <div class="flex items-center space-x-4 p-3 hover:bg-beige-light rounded-lg">
+                    <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                    <div class="flex-1">
+                        <p class="text-black font-medium">Sarah Johnson checked in for 09:30 appointment</p>
+                        <p class="text-sm text-gray-600">2 minutes ago</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-4 p-3 hover:bg-beige-light rounded-lg">
+                    <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <div class="flex-1">
+                        <p class="text-black font-medium">Service completed for appointment #RDV-2024-000</p>
+                        <p class="text-sm text-gray-600">5 minutes ago</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-4 p-3 hover:bg-beige-light rounded-lg">
+                    <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                    <div class="flex-1">
+                        <p class="text-black font-medium">Michael Chen moved to waiting queue</p>
+                        <p class="text-sm text-gray-600">8 minutes ago</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-4 p-3 hover:bg-beige-light rounded-lg">
+                    <div class="w-2 h-2 bg-gray-500 rounded-full"></div>
+                    <div class="flex-1">
+                        <p class="text-black font-medium">New appointment scheduled for 11:00 AM</p>
+                        <p class="text-sm text-gray-600">12 minutes ago</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-white border-t border-gray-200 py-8 px-5 mt-12">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <i class="fas fa-calendar-check text-xl text-black"></i>
+                <span class="font-semibold text-black">E-RDV Daily Operations</span>
+            </div>
+            <div class="flex items-center space-x-6 text-sm text-gray-600">
+                <span>Branch: Downtown Office</span>
+                <span>Staff: 4 Active</span>
+                <span>Last Updated: Just now</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

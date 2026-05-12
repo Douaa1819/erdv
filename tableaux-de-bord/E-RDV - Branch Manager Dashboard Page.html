@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/heatmap.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        ::-webkit-scrollbar { display: none;}
+        * { font-family: 'Poppins', sans-serif; }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'beige-light': '#FAFAE6',
+                        'beige-medium': '#F5F5DC',
+                        'beige-dark': '#EEE5DE'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-beige-light">
+
+    <!-- Header -->
+    <header id="header" class="bg-white border-b border-gray-200 p-5">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-8">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-calendar-check text-2xl text-black"></i>
+                    <h1 class="text-2xl font-bold text-black">E-RDV</h1>
+                </div>
+                <nav class="hidden md:flex space-x-6">
+
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="p-2 rounded-lg border border-gray-200 hover:bg-beige-medium">
+                    <i class="fas fa-bell text-black"></i>
+                </button>
+                <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" alt="Manager Avatar" class="w-10 h-10 rounded-full">
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard -->
+    <main id="main-dashboard" class="p-5">
+        <div class="max-w-7xl mx-auto">
+            
+            <!-- Dashboard Header -->
+            <section id="dashboard-header" class="mb-8">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h2 class="text-3xl font-bold text-black">Branch Management Dashboard</h2>
+                        <p class="text-gray-600 mt-2">Oversee branch availability, staff planning, and appointment scheduling</p>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <select class="border border-gray-200 rounded-lg px-4 py-2 bg-white">
+                            <option>Downtown Branch</option>
+                            <option>Uptown Branch</option>
+                            <option>Mall Branch</option>
+                        </select>
+                        <button class="bg-black text-white px-6 py-2 rounded-lg font-semibold hover:bg-gray-800">
+                            <i class="fas fa-plus mr-2"></i>New Schedule
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Metrics -->
+            <section id="key-metrics" class="mb-8">
+                <div class="grid grid-cols-4 gap-6">
+                    <div id="metric-today" class="bg-white p-6 rounded-xl border border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-600 text-sm">Today's Appointments</p>
+                                <p class="text-3xl font-bold text-black">47</p>
+                                <p class="text-green-600 text-sm flex items-center mt-1">
+                                    <i class="fas fa-arrow-up mr-1"></i>+12%
+                                </p>
+                            </div>
+                            <div class="w-12 h-12 bg-beige-dark rounded-lg flex items-center justify-center">
+                                <i class="fas fa-calendar-day text-black text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="metric-available" class="bg-white p-6 rounded-xl border border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-600 text-sm">Available Slots</p>
+                                <p class="text-3xl font-bold text-black">23</p>
+                                <p class="text-blue-600 text-sm flex items-center mt-1">
+                                    <i class="fas fa-clock mr-1"></i>Real-time
+                                </p>
+                            </div>
+                            <div class="w-12 h-12 bg-beige-dark rounded-lg flex items-center justify-center">
+                                <i class="fas fa-clock text-black text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="metric-staff" class="bg-white p-6 rounded-xl border border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-600 text-sm">Active Staff</p>
+                                <p class="text-3xl font-bold text-black">8/12</p>
+                                <p class="text-orange-600 text-sm flex items-center mt-1">
+                                    <i class="fas fa-users mr-1"></i>67% Capacity
+                                </p>
+                            </div>
+                            <div class="w-12 h-12 bg-beige-dark rounded-lg flex items-center justify-center">
+                                <i class="fas fa-user-friends text-black text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="metric-satisfaction" class="bg-white p-6 rounded-xl border border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-600 text-sm">Satisfaction Rate</p>
+                                <p class="text-3xl font-bold text-black">4.8</p>
+                                <p class="text-green-600 text-sm flex items-center mt-1">
+                                    <i class="fas fa-star mr-1"></i>Excellent
+                                </p>
+                            </div>
+                            <div class="w-12 h-12 bg-beige-dark rounded-lg flex items-center justify-center">
+                                <i class="fas fa-smile text-black text-xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Content Grid -->
+            <div class="grid grid-cols-3 gap-8">
+                
+                <!-- Left Column -->
+                <div class="col-span-2 space-y-8">
+                    
+                    <!-- Weekly Schedule Overview -->
+                    <section id="weekly-schedule" class="bg-white rounded-xl border border-gray-200 p-6">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-xl font-bold text-black">Weekly Schedule Overview</h3>
+                            <div class="flex items-center space-x-2">
+                                <button class="p-2 hover:bg-beige-light rounded-lg">
+                                    <i class="fas fa-chevron-left text-gray-600"></i>
+                                </button>
+                                <span class="text-sm font-medium text-gray-600">Oct 6-12, 2024</span>
+                                <button class="p-2 hover:bg-beige-light rounded-lg">
+                                    <i class="fas fa-chevron-right text-gray-600"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="schedule-heatmap" style="height: 300px;"></div>
+                    </section>
+
+                    <!-- Staff Availability -->
+                    <section id="staff-availability" class="bg-white rounded-xl border border-gray-200 p-6">
+                        <h3 class="text-xl font-bold text-black mb-6">Staff Availability Today</h3>
+                        <div class="space-y-4">
+                            <div id="staff-1" class="flex items-center justify-between p-4 bg-beige-light rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg" alt="Staff" class="w-10 h-10 rounded-full">
+                                    <div>
+                                        <p class="font-semibold text-black">Sarah Johnson</p>
+                                        <p class="text-sm text-gray-600">Customer Service</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Available</span>
+                                    <span class="text-sm text-gray-600">9:00 - 17:00</span>
+                                </div>
+                            </div>
+                            <div id="staff-2" class="flex items-center justify-between p-4 bg-beige-light rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg" alt="Staff" class="w-10 h-10 rounded-full">
+                                    <div>
+                                        <p class="font-semibold text-black">Michael Chen</p>
+                                        <p class="text-sm text-gray-600">Financial Advisor</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Busy</span>
+                                    <span class="text-sm text-gray-600">10:00 - 16:00</span>
+                                </div>
+                            </div>
+                            <div id="staff-3" class="flex items-center justify-between p-4 bg-beige-light rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg" alt="Staff" class="w-10 h-10 rounded-full">
+                                    <div>
+                                        <p class="font-semibold text-black">Emma Davis</p>
+                                        <p class="text-sm text-gray-600">Account Manager</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">Off Duty</span>
+                                    <span class="text-sm text-gray-600">Not scheduled</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Right Column -->
+                <div class="space-y-8">
+                    
+                    <!-- Quick Actions -->
+                    <section id="quick-actions-panel" class="bg-white rounded-xl border border-gray-200 p-6">
+                        <h3 class="text-xl font-bold text-black mb-6">Quick Actions</h3>
+                        <div class="space-y-3">
+                            <button class="w-full bg-black text-white p-3 rounded-lg font-semibold hover:bg-gray-800 flex items-center justify-center">
+                                <i class="fas fa-calendar-plus mr-2"></i>Block Time Slot
+                            </button>
+                            <button class="w-full border border-black text-black p-3 rounded-lg font-semibold hover:bg-beige-light flex items-center justify-center">
+                                <i class="fas fa-user-plus mr-2"></i>Add Staff Shift
+                            </button>
+                            <button class="w-full border border-gray-300 text-gray-700 p-3 rounded-lg font-semibold hover:bg-gray-50 flex items-center justify-center">
+                                <i class="fas fa-download mr-2"></i>Export Schedule
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- Today's Appointments -->
+                    <section id="todays-appointments" class="bg-white rounded-xl border border-gray-200 p-6">
+                        <h3 class="text-xl font-bold text-black mb-6">Today's Appointments</h3>
+                        <div class="space-y-4">
+                            <div id="appointment-1" class="border-l-4 border-green-500 pl-4 py-2">
+                                <p class="font-semibold text-black">John Smith</p>
+                                <p class="text-sm text-gray-600">Account Opening - 10:00 AM</p>
+                                <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Confirmed</span>
+                            </div>
+                            <div id="appointment-2" class="border-l-4 border-blue-500 pl-4 py-2">
+                                <p class="font-semibold text-black">Maria Garcia</p>
+                                <p class="text-sm text-gray-600">Loan Consultation - 11:30 AM</p>
+                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">In Progress</span>
+                            </div>
+                            <div id="appointment-3" class="border-l-4 border-yellow-500 pl-4 py-2">
+                                <p class="font-semibold text-black">David Wilson</p>
+                                <p class="text-sm text-gray-600">Investment Review - 2:00 PM</p>
+                                <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs">Pending</span>
+                            </div>
+                        </div>
+                        <button class="w-full mt-4 text-black hover:text-gray-600 font-medium">
+                            View All Appointments <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </section>
+
+                    <!-- Branch Status -->
+                    <section id="branch-status" class="bg-white rounded-xl border border-gray-200 p-6">
+                        <h3 class="text-xl font-bold text-black mb-6">Branch Status</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-600">Operating Hours</span>
+                                <span class="font-semibold text-black">9:00 - 17:00</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-600">Current Capacity</span>
+                                <span class="font-semibold text-orange-600">67%</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-600">Wait Time</span>
+                                <span class="font-semibold text-green-600">5 min</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-600">Queue Length</span>
+                                <span class="font-semibold text-black">3 clients</span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-white border-t border-gray-200 py-8 px-5 mt-12">
+        <div class="max-w-7xl mx-auto text-center text-gray-600">
+            <p>&copy; 2024 E-RDV Branch Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+<script>
+Highcharts.chart('schedule-heatmap', {
+    chart: {
+        type: 'heatmap',
+        backgroundColor: 'transparent'
+    },
+    title: {
+        text: null
+    },
+    credits: {
+        enabled: false
+    },
+    xAxis: {
+        categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        labels: {
+            style: {
+                fontSize: '12px',
+                fontFamily: 'Poppins'
+            }
+        }
+    },
+    yAxis: {
+        categories: ['9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00'],
+        title: null,
+        labels: {
+            style: {
+                fontSize: '12px',
+                fontFamily: 'Poppins'
+            }
+        }
+    },
+    colorAxis: {
+        min: 0,
+        max: 10,
+        stops: [
+            [0, '#F5F5DC'],
+            [0.5, '#EEE5DE'],
+            [1, '#000000']
+        ]
+    },
+    legend: {
+        enabled: false
+    },
+    series: [{
+        name: 'Appointments',
+        borderWidth: 1,
+        borderColor: '#ffffff',
+        data: [
+            [0, 0, 3], [0, 1, 7], [0, 2, 5], [0, 3, 8], [0, 4, 6], [0, 5, 4], [0, 6, 2], [0, 7, 5], [0, 8, 3],
+            [1, 0, 4], [1, 1, 8], [1, 2, 6], [1, 3, 9], [1, 4, 7], [1, 5, 5], [1, 6, 3], [1, 7, 6], [1, 8, 4],
+            [2, 0, 5], [2, 1, 6], [2, 2, 8], [2, 3, 7], [2, 4, 9], [2, 5, 6], [2, 6, 4], [2, 7, 7], [2, 8, 5],
+            [3, 0, 6], [3, 1, 9], [3, 2, 7], [3, 3, 10], [3, 4, 8], [3, 5, 7], [3, 6, 5], [3, 7, 8], [3, 8, 6],
+            [4, 0, 4], [4, 1, 7], [4, 2, 9], [4, 3, 8], [4, 4, 10], [4, 5, 8], [4, 6, 6], [4, 7, 9], [4, 8, 7],
+            [5, 0, 2], [5, 1, 4], [5, 2, 3], [5, 3, 5], [5, 4, 4], [5, 5, 3], [5, 6, 2], [5, 7, 3], [5, 8, 2],
+            [6, 0, 1], [6, 1, 2], [6, 2, 1], [6, 3, 3], [6, 4, 2], [6, 5, 1], [6, 6, 1], [6, 7, 2], [6, 8, 1]
+        ]
+    }],
+    tooltip: {
+        formatter: function () {
+            return '<b>' + this.series.xAxis.categories[this.point.x] + '</b><br>' +
+                   this.series.yAxis.categories[this.point.y] + '<br>' +
+                   '<b>' + this.point.value + '</b> appointments';
+        }
+    }
+});
+</script>
+
+</body>
+</html>

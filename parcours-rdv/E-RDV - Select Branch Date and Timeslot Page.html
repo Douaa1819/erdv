@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        ::-webkit-scrollbar { display: none;}
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#1e293b',
+                        gold: '#f59e0b',
+                        gray: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+<header id="header" class="bg-white shadow-sm border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-navy rounded-lg flex items-center justify-center">
+                    <i class="fa-solid fa-calendar-check text-white text-lg"></i>
+                </div>
+                <h1 class="text-2xl font-bold text-navy">E-RDV</h1>
+            </div>
+            <nav class="flex items-center space-x-8">
+                <span class="text-gray-600 hover:text-navy transition-colors cursor-pointer">Services</span>
+                <span class="text-gray-600 hover:text-navy transition-colors cursor-pointer">Locations</span>
+                <span class="text-gray-600 hover:text-navy transition-colors cursor-pointer">Support</span>
+                <button class="bg-navy text-white px-6 py-2 rounded-lg hover:bg-gray-800 transition-colors">
+                    Sign In
+                </button>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<main id="main-content" class="max-w-7xl mx-auto px-6 py-8">
+    <div class="mb-8">
+        <h2 class="text-3xl font-bold text-navy mb-2">Book Your Appointment</h2>
+        <p class="text-gray-600">Schedule consultations and meetings with our professional services</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <div id="main-booking-area" class="lg:col-span-2 space-y-8">
+            
+            <section id="branch-selection" class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-xl font-semibold text-navy flex items-center">
+                        <i class="fa-solid fa-map-marker-alt mr-3 text-gold"></i>
+                        Select Location
+                    </h3>
+                    <div class="relative">
+                        <input type="text" placeholder="Search branches..." 
+                               class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent outline-none">
+                        <i class="fa-solid fa-search absolute left-3 top-3 text-gray-400"></i>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="branch-card border-2 border-gold bg-gold/5 rounded-lg p-4 cursor-pointer transition-all hover:shadow-md">
+                        <div class="flex items-start justify-between mb-3">
+                            <div>
+                                <h4 class="font-semibold text-navy">Downtown Business Center</h4>
+                                <p class="text-sm text-gray-600">123 Corporate Ave, Suite 500</p>
+                            </div>
+                            <span class="bg-gold text-white text-xs px-2 py-1 rounded">Selected</span>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-600 space-x-4">
+                            <span><i class="fa-solid fa-clock mr-1"></i>9AM - 6PM</span>
+                            <span><i class="fa-solid fa-phone mr-1"></i>(555) 123-4567</span>
+                        </div>
+                    </div>
+                    
+                    <div class="branch-card border border-gray-300 rounded-lg p-4 cursor-pointer transition-all hover:shadow-md hover:border-gold">
+                        <div class="flex items-start justify-between mb-3">
+                            <div>
+                                <h4 class="font-semibold text-navy">Midtown Office</h4>
+                                <p class="text-sm text-gray-600">456 Professional Blvd, Floor 12</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-600 space-x-4">
+                            <span><i class="fa-solid fa-clock mr-1"></i>8AM - 7PM</span>
+                            <span><i class="fa-solid fa-phone mr-1"></i>(555) 987-6543</span>
+                        </div>
+                    </div>
+                    
+                    <div class="branch-card border border-gray-300 rounded-lg p-4 cursor-pointer transition-all hover:shadow-md hover:border-gold">
+                        <div class="flex items-start justify-between mb-3">
+                            <div>
+                                <h4 class="font-semibold text-navy">Financial District</h4>
+                                <p class="text-sm text-gray-600">789 Executive Plaza, 25th Floor</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-600 space-x-4">
+                            <span><i class="fa-solid fa-clock mr-1"></i>7AM - 8PM</span>
+                            <span><i class="fa-solid fa-phone mr-1"></i>(555) 456-7890</span>
+                        </div>
+                    </div>
+                    
+                    <div class="branch-card border border-gray-300 rounded-lg p-4 cursor-pointer transition-all hover:shadow-md hover:border-gold">
+                        <div class="flex items-start justify-between mb-3">
+                            <div>
+                                <h4 class="font-semibold text-navy">Tech Hub Location</h4>
+                                <p class="text-sm text-gray-600">321 Innovation Way, Building C</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center text-sm text-gray-600 space-x-4">
+                            <span><i class="fa-solid fa-clock mr-1"></i>9AM - 5PM</span>
+                            <span><i class="fa-solid fa-phone mr-1"></i>(555) 654-3210</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="service-selection" class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                <h3 class="text-xl font-semibold text-navy mb-6 flex items-center">
+                    <i class="fa-solid fa-briefcase mr-3 text-gold"></i>
+                    Choose Service
+                </h3>
+                
+                <div class="space-y-4">
+                    <div class="service-card border-2 border-gold bg-gold/5 rounded-lg p-4 cursor-pointer transition-all">
+                        <div class="flex items-center justify-between">
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-navy">Business Consultation</h4>
+                                <p class="text-sm text-gray-600 mt-1">Strategic planning and business development session</p>
+                                <div class="flex items-center mt-2 space-x-4">
+                                    <span class="text-sm text-gray-600"><i class="fa-solid fa-clock mr-1"></i>60 minutes</span>
+                                    <span class="text-lg font-bold text-gold">$250</span>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <span class="bg-gold text-white text-xs px-2 py-1 rounded">Selected</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card border border-gray-300 rounded-lg p-4 cursor-pointer transition-all hover:shadow-md hover:border-gold">
+                        <div class="flex items-center justify-between">
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-navy">Financial Review</h4>
+                                <p class="text-sm text-gray-600 mt-1">Comprehensive financial analysis and planning</p>
+                                <div class="flex items-center mt-2 space-x-4">
+                                    <span class="text-sm text-gray-600"><i class="fa-solid fa-clock mr-1"></i>90 minutes</span>
+                                    <span class="text-lg font-bold text-navy">$350</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card border border-gray-300 rounded-lg p-4 cursor-pointer transition-all hover:shadow-md hover:border-gold">
+                        <div class="flex items-center justify-between">
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-navy">Legal Advisory</h4>
+                                <p class="text-sm text-gray-600 mt-1">Legal consultation for business matters</p>
+                                <div class="flex items-center mt-2 space-x-4">
+                                    <span class="text-sm text-gray-600"><i class="fa-solid fa-clock mr-1"></i>45 minutes</span>
+                                    <span class="text-lg font-bold text-navy">$300</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="datetime-selection" class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+                <h3 class="text-xl font-semibold text-navy mb-6 flex items-center">
+                    <i class="fa-solid fa-calendar mr-3 text-gold"></i>
+                    Select Date & Time
+                </h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-medium text-navy mb-3">Available Dates</h4>
+                        <div class="grid grid-cols-7 gap-2 text-center">
+                            <div class="text-xs font-medium text-gray-500 py-2">S</div>
+                            <div class="text-xs font-medium text-gray-500 py-2">M</div>
+                            <div class="text-xs font-medium text-gray-500 py-2">T</div>
+                            <div class="text-xs font-medium text-gray-500 py-2">W</div>
+                            <div class="text-xs font-medium text-gray-500 py-2">T</div>
+                            <div class="text-xs font-medium text-gray-500 py-2">F</div>
+                            <div class="text-xs font-medium text-gray-500 py-2">S</div>
+                            
+                            <div class="text-gray-400 py-2">29</div>
+                            <div class="text-gray-400 py-2">30</div>
+                            <div class="text-gray-400 py-2">31</div>
+                            <div class="hover:bg-gray-100 cursor-pointer py-2 rounded">1</div>
+                            <div class="hover:bg-gray-100 cursor-pointer py-2 rounded">2</div>
+                            <div class="hover:bg-gray-100 cursor-pointer py-2 rounded">3</div>
+                            <div class="hover:bg-gray-100 cursor-pointer py-2 rounded">4</div>
+                            
+                            <div class="hover:bg-gray-100 cursor-pointer py-2 rounded">5</div>
+                            <div class="hover:bg-gray-100 cursor-pointer py-2 rounded">6</div>
+                            <div class="hover:bg-gray-100 cursor-pointer py-2 rounded">7</div>
+                            <div class="hover:bg-gray-100 cursor-pointer py-2 rounded">8</div>
+                            <div class="hover:bg-gray-100 cursor-pointer py-2 rounded">9</div>
+                            <div class="hover:bg-gray-100 cursor-pointer py-2 rounded">10</div>
+                            <div class="hover:bg-gray-100 cursor-pointer py-2 rounded">11</div>
+                            
+                            <div class="hover:bg-gray-100 cursor-pointer py-2 rounded">12</div>
+                            <div class="hover:bg-gray-100 cursor-pointer py-2 rounded">13</div>
+                            <div class="hover:bg-gray-100 cursor-pointer py-2 rounded">14</div>
+                            <div class="bg-gold text-white py-2 rounded cursor-pointer">15</div>
+                            <div class="hover:bg-gray-100 cursor-pointer py-2 rounded">16</div>
+                            <div class="hover:bg-gray-100 cursor-pointer py-2 rounded">17</div>
+                            <div class="hover:bg-gray-100 cursor-pointer py-2 rounded">18</div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-medium text-navy mb-3">Available Times</h4>
+                        <div class="grid grid-cols-2 gap-2">
+                            <button class="border border-gray-300 rounded-lg py-2 px-3 text-sm hover:border-gold hover:bg-gold/10 transition-all">9:00 AM</button>
+                            <button class="border border-gray-300 rounded-lg py-2 px-3 text-sm hover:border-gold hover:bg-gold/10 transition-all">10:00 AM</button>
+                            <button class="border border-gray-300 rounded-lg py-2 px-3 text-sm hover:border-gold hover:bg-gold/10 transition-all">11:00 AM</button>
+                            <button class="border-2 border-gold bg-gold/10 text-gold rounded-lg py-2 px-3 text-sm font-medium">2:00 PM</button>
+                            <button class="border border-gray-300 rounded-lg py-2 px-3 text-sm hover:border-gold hover:bg-gold/10 transition-all">3:00 PM</button>
+                            <button class="border border-gray-300 rounded-lg py-2 px-3 text-sm hover:border-gold hover:bg-gold/10 transition-all">4:00 PM</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="booking-summary" class="lg:col-span-1">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 sticky top-8">
+                <h3 class="text-xl font-semibold text-navy mb-6 flex items-center">
+                    <i class="fa-solid fa-clipboard-list mr-3 text-gold"></i>
+                    Booking Summary
+                </h3>
+                
+                <div class="space-y-4 mb-6">
+                    <div class="flex items-start space-x-3">
+                        <i class="fa-solid fa-map-marker-alt text-gold mt-1"></i>
+                        <div>
+                            <p class="font-medium text-navy">Downtown Business Center</p>
+                            <p class="text-sm text-gray-600">123 Corporate Ave, Suite 500</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-3">
+                        <i class="fa-solid fa-briefcase text-gold mt-1"></i>
+                        <div>
+                            <p class="font-medium text-navy">Business Consultation</p>
+                            <p class="text-sm text-gray-600">60 minutes session</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-3">
+                        <i class="fa-solid fa-calendar text-gold mt-1"></i>
+                        <div>
+                            <p class="font-medium text-navy">December 15, 2024</p>
+                            <p class="text-sm text-gray-600">2:00 PM - 3:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-200 pt-4 mb-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-gray-600">Service Fee</span>
+                        <span class="font-medium text-navy">$250.00</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-gray-600">Booking Fee</span>
+                        <span class="font-medium text-navy">$15.00</span>
+                    </div>
+                    <div class="flex justify-between items-center text-lg font-bold text-navy border-t border-gray-200 pt-2">
+                        <span>Total</span>
+                        <span>$265.00</span>
+                    </div>
+                </div>
+                
+                <button class="w-full bg-navy text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors mb-4">
+                    Confirm Booking
+                </button>
+                
+                <p class="text-xs text-gray-500 text-center">
+                    By booking, you agree to our terms and conditions. You can cancel or reschedule up to 24 hours before your appointment.
+                </p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const branchCards = document.querySelectorAll('.branch-card');
+    const serviceCards = document.querySelectorAll('.service-card');
+    
+    branchCards.forEach(card => {
+        card.addEventListener('click', function() {
+            branchCards.forEach(c => {
+                c.classList.remove('border-gold', 'bg-gold/5');
+                c.classList.add('border-gray-300');
+                const badge = c.querySelector('.bg-gold');
+                if (badge) badge.remove();
+            });
+            
+            this.classList.remove('border-gray-300');
+            this.classList.add('border-gold', 'bg-gold/5');
+            
+            const badge = document.createElement('span');
+            badge.className = 'bg-gold text-white text-xs px-2 py-1 rounded';
+            badge.textContent = 'Selected';
+            this.querySelector('.flex.items-start.justify-between').appendChild(badge);
+        });
+    });
+    
+    serviceCards.forEach(card => {
+        card.addEventListener('click', function() {
+            serviceCards.forEach(c => {
+                c.classList.remove('border-gold', 'bg-gold/5');
+                c.classList.add('border-gray-300');
+                const badge = c.querySelector('.bg-gold');
+                if (badge) badge.remove();
+            });
+            
+            this.classList.remove('border-gray-300');
+            this.classList.add('border-gold', 'bg-gold/5');
+            
+            const badge = document.createElement('span');
+            badge.className = 'bg-gold text-white text-xs px-2 py-1 rounded';
+            badge.textContent = 'Selected';
+            this.querySelector('.flex.items-center.justify-between').appendChild(badge);
+        });
+    });
+});
+</script>
+
+</body>
+</html>

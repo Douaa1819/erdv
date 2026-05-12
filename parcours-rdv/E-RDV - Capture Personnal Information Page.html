@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        ::-webkit-scrollbar { display: none;}
+        * { font-family: 'Poppins', sans-serif; }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'beige-light': '#FAFAE6',
+                        'beige-medium': '#F5F5DC',
+                        'beige-dark': '#EEE5DE'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-beige-light">
+
+    <!-- Header -->
+    <header id="header" class="bg-white border-b border-gray-200 p-5">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-8">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-calendar-check text-2xl text-black"></i>
+                    <h1 class="text-2xl font-bold text-black">E-RDV</h1>
+                </div>
+                <nav class="hidden md:flex space-x-6">
+                    <span class="text-black hover:text-gray-600 font-medium cursor-pointer">Design Tool</span>
+                    <span class="text-black hover:text-gray-600 font-medium cursor-pointer">Theme Selection</span>
+                    <span class="text-black hover:text-gray-600 font-medium cursor-pointer">Project Management</span>
+                    <span class="text-black hover:text-gray-600 font-medium cursor-pointer">Font Selection</span>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="p-2 rounded-lg border border-gray-200 hover:bg-beige-medium">
+                    <i class="fas fa-bell text-black"></i>
+                </button>
+                <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg" alt="User Avatar" class="w-10 h-10 rounded-full">
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb Navigation -->
+    <section id="breadcrumb" class="bg-white border-b border-gray-200 py-4 px-5">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center space-x-2 text-sm">
+                <span class="text-gray-500 cursor-pointer hover:text-black">Home</span>
+                <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                <span class="text-black font-medium">Book Appointment</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main-content" class="py-8 px-5">
+        <div class="max-w-4xl mx-auto">
+            
+            <!-- Page Title -->
+            <div id="page-title" class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-black mb-4">Personal Information & Verification</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Please provide your details and verify your mobile number to proceed with booking your appointment.</p>
+            </div>
+
+            <!-- Progress Indicator -->
+            <div id="progress-indicator" class="mb-12">
+                <div class="flex items-center justify-center space-x-8">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center font-bold">1</div>
+                        <span class="ml-3 text-black font-medium">Information</span>
+                    </div>
+                    <div class="w-16 h-1 bg-gray-300"></div>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-gray-300 text-gray-500 rounded-full flex items-center justify-center font-bold">2</div>
+                        <span class="ml-3 text-gray-500 font-medium">Branch & Service</span>
+                    </div>
+                    <div class="w-16 h-1 bg-gray-300"></div>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-gray-300 text-gray-500 rounded-full flex items-center justify-center font-bold">3</div>
+                        <span class="ml-3 text-gray-500 font-medium">Time Slot</span>
+                    </div>
+                    <div class="w-16 h-1 bg-gray-300"></div>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-gray-300 text-gray-500 rounded-full flex items-center justify-center font-bold">4</div>
+                        <span class="ml-3 text-gray-500 font-medium">Confirmation</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Information Form -->
+            <div id="information-form" class="bg-white rounded-xl border border-gray-200 p-8 mb-8">
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-12 bg-beige-dark rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-user text-black text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-black">Personal Information</h3>
+                </div>
+                
+                <form class="space-y-6">
+                    <!-- Name Fields -->
+                    <div class="grid grid-cols-2 gap-6">
+                        <div id="first-name-field">
+                            <label for="firstName" class="block text-sm font-medium text-black mb-2">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black transition-colors" placeholder="Enter your first name" required>
+                        </div>
+                        <div id="last-name-field">
+                            <label for="lastName" class="block text-sm font-medium text-black mb-2">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black transition-colors" placeholder="Enter your last name" required>
+                        </div>
+                    </div>
+
+                    <!-- Email Field -->
+                    <div id="email-field">
+                        <label for="email" class="block text-sm font-medium text-black mb-2">Email Address *</label>
+                        <div class="relative">
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 pl-12 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black transition-colors" placeholder="Enter your email address" required>
+                            <i class="fas fa-envelope absolute left-4 top-4 text-gray-400"></i>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Number Field -->
+                    <div id="mobile-field">
+                        <label for="mobile" class="block text-sm font-medium text-black mb-2">Mobile Number *</label>
+                        <div class="flex space-x-3">
+                            <select class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black bg-white w-24">
+                                <option>+1</option>
+                                <option>+33</option>
+                                <option>+44</option>
+                                <option>+49</option>
+                            </select>
+                            <div class="relative flex-1">
+                                <input type="tel" id="mobile" name="mobile" class="w-full px-4 py-3 pl-12 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-black transition-colors" placeholder="Enter your mobile number" required>
+                                <i class="fas fa-phone absolute left-4 top-4 text-gray-400"></i>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-2">We'll send you an OTP to verify this number</p>
+                    </div>
+
+                    <!-- Send OTP Button -->
+                    <div id="send-otp-section" class="flex justify-end">
+                        <button type="button" id="sendOtpBtn" class="px-6 py-3 bg-black text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Send OTP
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- OTP Verification Section -->
+            <div id="otp-verification" class="bg-white rounded-xl border border-gray-200 p-8 opacity-50 pointer-events-none">
+                <div class="flex items-center mb-8">
+                    <div class="w-12 h-12 bg-beige-dark rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-shield-alt text-black text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-black">Mobile Verification</h3>
+                </div>
+
+                <div class="text-center mb-6">
+                    <p class="text-gray-600">Enter the 6-digit code sent to your mobile number</p>
+                    <p class="text-sm text-gray-500 mt-1">+1 *** *** **45</p>
+                </div>
+
+                <!-- OTP Input Fields -->
+                <div id="otp-inputs" class="flex justify-center space-x-3 mb-6">
+                    <input type="text" maxlength="1" class="w-12 h-12 text-center border border-gray-300 rounded-lg text-xl font-bold focus:ring-2 focus:ring-black focus:border-black">
+                    <input type="text" maxlength="1" class="w-12 h-12 text-center border border-gray-300 rounded-lg text-xl font-bold focus:ring-2 focus:ring-black focus:border-black">
+                    <input type="text" maxlength="1" class="w-12 h-12 text-center border border-gray-300 rounded-lg text-xl font-bold focus:ring-2 focus:ring-black focus:border-black">
+                    <input type="text" maxlength="1" class="w-12 h-12 text-center border border-gray-300 rounded-lg text-xl font-bold focus:ring-2 focus:ring-black focus:border-black">
+                    <input type="text" maxlength="1" class="w-12 h-12 text-center border border-gray-300 rounded-lg text-xl font-bold focus:ring-2 focus:ring-black focus:border-black">
+                    <input type="text" maxlength="1" class="w-12 h-12 text-center border border-gray-300 rounded-lg text-xl font-bold focus:ring-2 focus:ring-black focus:border-black">
+                </div>
+
+                <!-- Timer and Resend -->
+                <div id="otp-timer" class="text-center mb-6">
+                    <p class="text-sm text-gray-500">Code expires in <span class="font-medium text-black">02:30</span></p>
+                    <button type="button" class="text-sm text-black hover:underline mt-2">Resend Code</button>
+                </div>
+
+                <!-- Verify Button -->
+                <div class="text-center">
+                    <button type="button" class="px-8 py-3 bg-black text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+                        <i class="fas fa-check mr-2"></i>
+                        Verify & Continue
+                    </button>
+                </div>
+            </div>
+
+            <!-- Alternative Access Methods -->
+            <div id="alternative-access" class="mt-8 bg-white rounded-xl border border-gray-200 p-8">
+                <h4 class="text-lg font-bold text-black mb-4 text-center">Alternative Access Methods</h4>
+                <div class="grid grid-cols-2 gap-4">
+                    <button class="flex items-center justify-center px-6 py-4 border-2 border-green-500 text-green-600 rounded-lg font-semibold hover:bg-green-50 transition-colors">
+                        <i class="fab fa-whatsapp text-xl mr-3"></i>
+                        Continue with WhatsApp
+                    </button>
+                    <button class="flex items-center justify-center px-6 py-4 border border-gray-300 text-gray-600 rounded-lg font-semibold hover:bg-gray-50 transition-colors">
+                        <i class="fas fa-phone text-lg mr-3"></i>
+                        Call to Book
+                    </button>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div id="action-buttons" class="mt-12 flex items-center justify-between">
+                <button class="flex items-center px-8 py-4 border border-black text-black rounded-lg font-semibold hover:bg-beige-dark transition-colors">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    Back to Home
+                </button>
+                <div class="flex space-x-4">
+                    <button class="px-8 py-4 border border-gray-300 text-gray-600 rounded-lg font-semibold hover:bg-gray-50 transition-colors">
+                        Save for Later
+                    </button>
+                    <button id="continueBtn" class="flex items-center px-8 py-4 bg-gray-300 text-gray-500 rounded-lg font-semibold cursor-not-allowed" disabled>
+                        Continue to Branch Selection
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-white border-t border-gray-200 py-12 px-5 mt-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-4 gap-8">
+                <div id="footer-brand">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i class="fas fa-calendar-check text-2xl text-black"></i>
+                        <h5 class="text-xl font-bold text-black">E-RDV</h5>
+                    </div>
+                    <p class="text-gray-600">Streamlining appointment management with intelligent booking solutions.</p>
+                </div>
+                <div id="footer-services">
+                    <h6 class="font-bold text-black mb-4">Services</h6>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><span class="hover:text-black cursor-pointer">Online Booking</span></li>
+                        <li><span class="hover:text-black cursor-pointer">WhatsApp Integration</span></li>
+                        <li><span class="hover:text-black cursor-pointer">Branch Management</span></li>
+                        <li><span class="hover:text-black cursor-pointer">Analytics</span></li>
+                    </ul>
+                </div>
+                <div id="footer-support">
+                    <h6 class="font-bold text-black mb-4">Support</h6>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><span class="hover:text-black cursor-pointer">Help Center</span></li>
+                        <li><span class="hover:text-black cursor-pointer">Contact Us</span></li>
+                        <li><span class="hover:text-black cursor-pointer">Documentation</span></li>
+                        <li><span class="hover:text-black cursor-pointer">Training</span></li>
+                    </ul>
+                </div>
+                <div id="footer-contact">
+                    <h6 class="font-bold text-black mb-4">Contact</h6>
+                    <div class="space-y-2 text-gray-600">
+                        <p class="flex items-center"><i class="fas fa-phone mr-2"></i>+1 (555) 123-4567</p>
+                        <p class="flex items-center"><i class="fas fa-envelope mr-2"></i>support@e-rdv.com</p>
+                        <p class="flex items-center"><i class="fas fa-map-marker-alt mr-2"></i>123 Business Ave</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-8 pt-8 text-center text-gray-600">
+                <p>&copy; 2024 E-RDV. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('sendOtpBtn').addEventListener('click', function() {
+            const mobile = document.getElementById('mobile').value;
+            if (mobile) {
+                const otpSection = document.getElementById('otp-verification');
+                otpSection.classList.remove('opacity-50', 'pointer-events-none');
+                otpSection.scrollIntoView({ behavior: 'smooth' });
+                
+                const inputs = otpSection.querySelectorAll('input[type="text"]');
+                inputs[0].focus();
+                
+                inputs.forEach((input, index) => {
+                    input.addEventListener('input', function() {
+                        if (this.value.length === 1 && index < inputs.length - 1) {
+                            inputs[index + 1].focus();
+                        }
+                    });
+                    
+                    input.addEventListener('keydown', function(e) {
+                        if (e.key === 'Backspace' && this.value === '' && index > 0) {
+                            inputs[index - 1].focus();
+                        }
+                    });
+                });
+            }
+        });
+
+        const otpInputs = document.querySelectorAll('#otp-inputs input');
+        const continueBtn = document.getElementById('continueBtn');
+        
+        otpInputs.forEach(input => {
+            input.addEventListener('input', function() {
+                const allFilled = Array.from(otpInputs).every(inp => inp.value.length === 1);
+                if (allFilled) {
+                    continueBtn.classList.remove('bg-gray-300', 'text-gray-500', 'cursor-not-allowed');
+                    continueBtn.classList.add('bg-black', 'text-white', 'hover:bg-gray-800');
+                    continueBtn.disabled = false;
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

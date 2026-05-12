@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        ::-webkit-scrollbar { display: none;}
+        * { font-family: 'Poppins', sans-serif; }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'beige-light': '#FAFAE6',
+                        'beige-medium': '#F5F5DC',
+                        'beige-dark': '#EEE5DE'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-beige-light">
+
+    <!-- Header -->
+    <header id="header" class="bg-white border-b border-gray-200 p-5">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-8">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-calendar-check text-2xl text-black"></i>
+                    <h1 class="text-2xl font-bold text-black">E-RDV</h1>
+                </div>
+                <nav class="hidden md:flex space-x-6">
+                    <span class="text-black hover:text-gray-600 font-medium cursor-pointer">Design Tool</span>
+                    <span class="text-black hover:text-gray-600 font-medium cursor-pointer">Theme Selection</span>
+                    <span class="text-black hover:text-gray-600 font-medium cursor-pointer">Project Management</span>
+                    <span class="text-black hover:text-gray-600 font-medium cursor-pointer">Font Selection</span>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="p-2 rounded-lg border border-gray-200 hover:bg-beige-medium">
+                    <i class="fas fa-bell text-black"></i>
+                </button>
+                <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg" alt="User Avatar" class="w-10 h-10 rounded-full">
+            </div>
+        </div>
+    </header>
+
+    <!-- Confirmation Hero Section -->
+    <section id="confirmation-hero" class="bg-beige-medium h-[500px] flex items-center">
+        <div class="max-w-4xl mx-auto px-5 text-center">
+            <div class="mb-8">
+                <div class="w-24 h-24 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-check text-4xl text-white"></i>
+                </div>
+                <h2 class="text-5xl font-bold text-black mb-4">Appointment Confirmed!</h2>
+                <p class="text-xl text-gray-700">Your appointment has been successfully booked. Please save your confirmation details below.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Confirmation Details -->
+    <section id="confirmation-details" class="py-16 px-5">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white rounded-2xl border border-gray-200 p-8 shadow-lg">
+                <div class="text-center mb-8">
+                    <h3 class="text-3xl font-bold text-black mb-2">Booking Confirmation</h3>
+                    <p class="text-gray-600">Please keep this information for your records</p>
+                </div>
+
+                <!-- Unique Identifier -->
+                <div id="unique-identifier" class="bg-beige-light rounded-xl p-6 mb-8 text-center">
+                    <h4 class="text-lg font-semibold text-black mb-3">Confirmation Number</h4>
+                    <div class="bg-white rounded-lg p-4 border-2 border-dashed border-gray-300">
+                        <span class="text-3xl font-bold text-black tracking-wider">ERV-2024-001247</span>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-2">Reference this number for any inquiries or changes</p>
+                </div>
+
+                <!-- Appointment Details Grid -->
+                <div id="appointment-details-grid" class="grid grid-cols-2 gap-6 mb-8">
+                    <div class="bg-beige-light rounded-xl p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-calendar text-xl text-black mr-3"></i>
+                            <h5 class="font-semibold text-black">Date & Time</h5>
+                        </div>
+                        <p class="text-lg font-medium text-black">Monday, October 28, 2024</p>
+                        <p class="text-lg font-medium text-black">2:30 PM - 3:00 PM</p>
+                    </div>
+                    <div class="bg-beige-light rounded-xl p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-map-marker-alt text-xl text-black mr-3"></i>
+                            <h5 class="font-semibold text-black">Branch Location</h5>
+                        </div>
+                        <p class="text-lg font-medium text-black">Downtown Branch</p>
+                        <p class="text-gray-600">123 Main Street, Suite 100</p>
+                    </div>
+                    <div class="bg-beige-light rounded-xl p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-user-tie text-xl text-black mr-3"></i>
+                            <h5 class="font-semibold text-black">Service Type</h5>
+                        </div>
+                        <p class="text-lg font-medium text-black">General Consultation</p>
+                        <p class="text-gray-600">30-minute session</p>
+                    </div>
+                    <div class="bg-beige-light rounded-xl p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-user text-xl text-black mr-3"></i>
+                            <h5 class="font-semibold text-black">Client Information</h5>
+                        </div>
+                        <p class="text-lg font-medium text-black">John Smith</p>
+                        <p class="text-gray-600">john.smith@email.com</p>
+                    </div>
+                </div>
+
+                <!-- QR Code Section -->
+                <div id="qr-code-section" class="bg-beige-dark rounded-xl p-6 mb-8 text-center">
+                    <h5 class="font-semibold text-black mb-4">Quick Access QR Code</h5>
+                    <div class="bg-white rounded-lg p-4 inline-block">
+                        <img class="w-32 h-32" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/1cfe57566c-b47af95de0d29f95cd20.png" alt="QR code for appointment confirmation ERV-2024-001247, black and white, clean design" />
+                    </div>
+                    <p class="text-sm text-gray-600 mt-2">Scan to access your appointment details on mobile</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Steps -->
+    <section id="next-steps" class="bg-beige-medium py-16 px-5">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-3xl font-bold text-black text-center mb-12">What's Next?</h3>
+            <div class="grid grid-cols-3 gap-8">
+                <div id="reminder-step" class="bg-white rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-bell text-2xl text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-black mb-3">Automatic Reminders</h4>
+                    <p class="text-gray-600">You'll receive email and SMS reminders 24 hours and 1 hour before your appointment.</p>
+                </div>
+                <div id="preparation-step" class="bg-white rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clipboard-list text-2xl text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-black mb-3">Prepare Documents</h4>
+                    <p class="text-gray-600">Bring any required documents and arrive 10 minutes early for check-in.</p>
+                </div>
+                <div id="checkin-step" class="bg-white rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 bg-black rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-check-circle text-2xl text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-black mb-3">Easy Check-in</h4>
+                    <p class="text-gray-600">Use your confirmation number or QR code for quick identification at the branch.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Action Buttons -->
+    <section id="action-buttons" class="py-16 px-5">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white rounded-2xl border border-gray-200 p-8">
+                <h3 class="text-2xl font-bold text-black text-center mb-8">Manage Your Appointment</h3>
+                <div class="grid grid-cols-4 gap-4">
+                    <button id="print-confirmation" class="bg-beige-dark text-black px-6 py-4 rounded-xl font-semibold hover:bg-beige-medium transition-colors">
+                        <i class="fas fa-print text-xl mb-2 block"></i>
+                        Print Details
+                    </button>
+                    <button id="email-confirmation" class="bg-beige-dark text-black px-6 py-4 rounded-xl font-semibold hover:bg-beige-medium transition-colors">
+                        <i class="fas fa-envelope text-xl mb-2 block"></i>
+                        Email Copy
+                    </button>
+                    <button id="reschedule-appointment" class="border border-black text-black px-6 py-4 rounded-xl font-semibold hover:bg-beige-light transition-colors">
+                        <i class="fas fa-calendar-alt text-xl mb-2 block"></i>
+                        Reschedule
+                    </button>
+                    <button id="cancel-appointment" class="bg-red-100 text-red-700 px-6 py-4 rounded-xl font-semibold hover:bg-red-200 transition-colors">
+                        <i class="fas fa-times text-xl mb-2 block"></i>
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Support -->
+    <section id="contact-support" class="bg-beige-dark py-16 px-5">
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 class="text-3xl font-bold text-black mb-6">Need Help?</h3>
+            <p class="text-xl text-gray-700 mb-8">Our customer service team is here to assist you with any questions or concerns.</p>
+            <div class="flex justify-center space-x-6">
+                <button class="bg-black text-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-800 transition-colors">
+                    <i class="fas fa-phone mr-2"></i>
+                    Call Support
+                </button>
+                <button class="border border-black text-black px-8 py-4 rounded-xl font-semibold hover:bg-beige-medium transition-colors">
+                    <i class="fab fa-whatsapp mr-2"></i>
+                    WhatsApp Chat
+                </button>
+                <button class="border border-black text-black px-8 py-4 rounded-xl font-semibold hover:bg-beige-medium transition-colors">
+                    <i class="fas fa-envelope mr-2"></i>
+                    Email Us
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-white border-t border-gray-200 py-12 px-5">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-4 gap-8">
+                <div id="footer-brand">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i class="fas fa-calendar-check text-2xl text-black"></i>
+                        <h5 class="text-xl font-bold text-black">E-RDV</h5>
+                    </div>
+                    <p class="text-gray-600">Streamlining appointment management with intelligent booking solutions.</p>
+                </div>
+                <div id="footer-services">
+                    <h6 class="font-bold text-black mb-4">Services</h6>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><span class="hover:text-black cursor-pointer">Online Booking</span></li>
+                        <li><span class="hover:text-black cursor-pointer">WhatsApp Integration</span></li>
+                        <li><span class="hover:text-black cursor-pointer">Branch Management</span></li>
+                        <li><span class="hover:text-black cursor-pointer">Analytics</span></li>
+                    </ul>
+                </div>
+                <div id="footer-support">
+                    <h6 class="font-bold text-black mb-4">Support</h6>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><span class="hover:text-black cursor-pointer">Help Center</span></li>
+                        <li><span class="hover:text-black cursor-pointer">Contact Us</span></li>
+                        <li><span class="hover:text-black cursor-pointer">Documentation</span></li>
+                        <li><span class="hover:text-black cursor-pointer">Training</span></li>
+                    </ul>
+                </div>
+                <div id="footer-contact">
+                    <h6 class="font-bold text-black mb-4">Contact</h6>
+                    <div class="space-y-2 text-gray-600">
+                        <p class="flex items-center"><i class="fas fa-phone mr-2"></i>+1 (555) 123-4567</p>
+                        <p class="flex items-center"><i class="fas fa-envelope mr-2"></i>support@e-rdv.com</p>
+                        <p class="flex items-center"><i class="fas fa-map-marker-alt mr-2"></i>123 Business Ave</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-8 pt-8 text-center text-gray-600">
+                <p>&copy; 2024 E-RDV. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

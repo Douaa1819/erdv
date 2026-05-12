@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        ::-webkit-scrollbar { display: none;}
+        * { font-family: 'Poppins', sans-serif; }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'beige-light': '#FAFAE6',
+                        'beige-medium': '#F5F5DC',
+                        'beige-dark': '#EEE5DE'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-beige-light">
+
+    <!-- Header -->
+    <header id="header" class="bg-white border-b border-gray-200 p-5">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-8">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-calendar-check text-2xl text-black"></i>
+                    <h1 class="text-2xl font-bold text-black">E-RDV</h1>
+                </div>
+                <nav class="hidden md:flex space-x-6">
+                    <span class="text-black hover:text-gray-600 font-medium cursor-pointer">Design Tool</span>
+                    <span class="text-black hover:text-gray-600 font-medium cursor-pointer">Theme Selection</span>
+                    <span class="text-black hover:text-gray-600 font-medium cursor-pointer">Project Management</span>
+                    <span class="text-black hover:text-gray-600 font-medium cursor-pointer">Font Selection</span>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="p-2 rounded-lg border border-gray-200 hover:bg-beige-medium">
+                    <i class="fas fa-bell text-black"></i>
+                </button>
+                <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg" alt="User Avatar" class="w-10 h-10 rounded-full">
+            </div>
+        </div>
+    </header>
+
+    <!-- Survey Header Section -->
+    <section id="survey-header" class="bg-beige-medium py-12 px-5">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="flex items-center justify-center mb-6">
+                <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg">
+                    <i class="fas fa-star text-2xl text-black"></i>
+                </div>
+            </div>
+            <h2 class="text-4xl font-bold text-black mb-4">How Was Your Experience?</h2>
+            <p class="text-xl text-gray-700 mb-6">Your feedback helps us improve our service quality and better serve you in the future.</p>
+            <div class="bg-white rounded-lg p-4 inline-block border border-gray-200">
+                <p class="text-sm text-gray-600">Appointment ID: <span class="font-semibold text-black">#RDV-2024-001234</span></p>
+                <p class="text-sm text-gray-600">Date: <span class="font-semibold text-black">October 15, 2024 - 2:30 PM</span></p>
+                <p class="text-sm text-gray-600">Service: <span class="font-semibold text-black">General Consultation</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Survey Form -->
+    <section id="survey-form" class="py-16 px-5">
+        <div class="max-w-4xl mx-auto">
+            <form class="space-y-8">
+                <!-- Overall Satisfaction -->
+                <div id="overall-rating" class="bg-white rounded-xl p-8 border border-gray-200">
+                    <h3 class="text-2xl font-bold text-black mb-6">Overall Satisfaction</h3>
+                    <p class="text-gray-600 mb-6">How would you rate your overall experience with our service?</p>
+                    <div class="flex justify-center space-x-4">
+                        <button type="button" class="rating-btn flex flex-col items-center p-4 rounded-lg border border-gray-200 hover:bg-beige-light transition-colors" data-rating="1">
+                            <i class="fas fa-frown text-3xl text-red-500 mb-2"></i>
+                            <span class="text-sm font-medium">Very Poor</span>
+                        </button>
+                        <button type="button" class="rating-btn flex flex-col items-center p-4 rounded-lg border border-gray-200 hover:bg-beige-light transition-colors" data-rating="2">
+                            <i class="fas fa-meh text-3xl text-orange-500 mb-2"></i>
+                            <span class="text-sm font-medium">Poor</span>
+                        </button>
+                        <button type="button" class="rating-btn flex flex-col items-center p-4 rounded-lg border border-gray-200 hover:bg-beige-light transition-colors" data-rating="3">
+                            <i class="fas fa-meh text-3xl text-yellow-500 mb-2"></i>
+                            <span class="text-sm font-medium">Average</span>
+                        </button>
+                        <button type="button" class="rating-btn flex flex-col items-center p-4 rounded-lg border border-gray-200 hover:bg-beige-light transition-colors" data-rating="4">
+                            <i class="fas fa-smile text-3xl text-green-500 mb-2"></i>
+                            <span class="text-sm font-medium">Good</span>
+                        </button>
+                        <button type="button" class="rating-btn flex flex-col items-center p-4 rounded-lg border border-gray-200 hover:bg-beige-light transition-colors" data-rating="5">
+                            <i class="fas fa-grin-stars text-3xl text-green-600 mb-2"></i>
+                            <span class="text-sm font-medium">Excellent</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Detailed Ratings -->
+                <div id="detailed-ratings" class="bg-white rounded-xl p-8 border border-gray-200">
+                    <h3 class="text-2xl font-bold text-black mb-6">Service Quality Assessment</h3>
+                    <div class="grid grid-cols-2 gap-8">
+                        <div id="wait-time-rating" class="space-y-4">
+                            <label class="block text-lg font-semibold text-black">Waiting Time</label>
+                            <div class="flex space-x-2">
+                                <button type="button" class="star-rating w-8 h-8 text-gray-300 hover:text-yellow-400" data-category="wait-time" data-value="1">
+                                    <i class="fas fa-star"></i>
+                                </button>
+                                <button type="button" class="star-rating w-8 h-8 text-gray-300 hover:text-yellow-400" data-category="wait-time" data-value="2">
+                                    <i class="fas fa-star"></i>
+                                </button>
+                                <button type="button" class="star-rating w-8 h-8 text-gray-300 hover:text-yellow-400" data-category="wait-time" data-value="3">
+                                    <i class="fas fa-star"></i>
+                                </button>
+                                <button type="button" class="star-rating w-8 h-8 text-gray-300 hover:text-yellow-400" data-category="wait-time" data-value="4">
+                                    <i class="fas fa-star"></i>
+                                </button>
+                                <button type="button" class="star-rating w-8 h-8 text-gray-300 hover:text-yellow-400" data-category="wait-time" data-value="5">
+                                    <i class="fas fa-star"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="staff-service-rating" class="space-y-4">
+                            <label class="block text-lg font-semibold text-black">Staff Service</label>
+                            <div class="flex space-x-2">
+                                <button type="button" class="star-rating w-8 h-8 text-gray-300 hover:text-yellow-400" data-category="staff-service" data-value="1">
+                                    <i class="fas fa-star"></i>
+                                </button>
+                                <button type="button" class="star-rating w-8 h-8 text-gray-300 hover:text-yellow-400" data-category="staff-service" data-value="2">
+                                    <i class="fas fa-star"></i>
+                                </button>
+                                <button type="button" class="star-rating w-8 h-8 text-gray-300 hover:text-yellow-400" data-category="staff-service" data-value="3">
+                                    <i class="fas fa-star"></i>
+                                </button>
+                                <button type="button" class="star-rating w-8 h-8 text-gray-300 hover:text-yellow-400" data-category="staff-service" data-value="4">
+                                    <i class="fas fa-star"></i>
+                                </button>
+                                <button type="button" class="star-rating w-8 h-8 text-gray-300 hover:text-yellow-400" data-category="staff-service" data-value="5">
+                                    <i class="fas fa-star"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="facility-rating" class="space-y-4">
+                            <label class="block text-lg font-semibold text-black">Facility Cleanliness</label>
+                            <div class="flex space-x-2">
+                                <button type="button" class="star-rating w-8 h-8 text-gray-300 hover:text-yellow-400" data-category="facility" data-value="1">
+                                    <i class="fas fa-star"></i>
+                                </button>
+                                <button type="button" class="star-rating w-8 h-8 text-gray-300 hover:text-yellow-400" data-category="facility" data-value="2">
+                                    <i class="fas fa-star"></i>
+                                </button>
+                                <button type="button" class="star-rating w-8 h-8 text-gray-300 hover:text-yellow-400" data-category="facility" data-value="3">
+                                    <i class="fas fa-star"></i>
+                                </button>
+                                <button type="button" class="star-rating w-8 h-8 text-gray-300 hover:text-yellow-400" data-category="facility" data-value="4">
+                                    <i class="fas fa-star"></i>
+                                </button>
+                                <button type="button" class="star-rating w-8 h-8 text-gray-300 hover:text-yellow-400" data-category="facility" data-value="5">
+                                    <i class="fas fa-star"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="booking-process-rating" class="space-y-4">
+                            <label class="block text-lg font-semibold text-black">Booking Process</label>
+                            <div class="flex space-x-2">
+                                <button type="button" class="star-rating w-8 h-8 text-gray-300 hover:text-yellow-400" data-category="booking-process" data-value="1">
+                                    <i class="fas fa-star"></i>
+                                </button>
+                                <button type="button" class="star-rating w-8 h-8 text-gray-300 hover:text-yellow-400" data-category="booking-process" data-value="2">
+                                    <i class="fas fa-star"></i>
+                                </button>
+                                <button type="button" class="star-rating w-8 h-8 text-gray-300 hover:text-yellow-400" data-category="booking-process" data-value="3">
+                                    <i class="fas fa-star"></i>
+                                </button>
+                                <button type="button" class="star-rating w-8 h-8 text-gray-300 hover:text-yellow-400" data-category="booking-process" data-value="4">
+                                    <i class="fas fa-star"></i>
+                                </button>
+                                <button type="button" class="star-rating w-8 h-8 text-gray-300 hover:text-yellow-400" data-category="booking-process" data-value="5">
+                                    <i class="fas fa-star"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feedback Text -->
+                <div id="feedback-text" class="bg-white rounded-xl p-8 border border-gray-200">
+                    <h3 class="text-2xl font-bold text-black mb-6">Additional Comments</h3>
+                    <textarea 
+                        class="w-full h-32 p-4 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-beige-dark resize-none" 
+                        placeholder="Please share any additional feedback or suggestions to help us improve our service..."
+                    ></textarea>
+                </div>
+
+                <!-- Recommendation -->
+                <div id="recommendation" class="bg-white rounded-xl p-8 border border-gray-200">
+                    <h3 class="text-2xl font-bold text-black mb-6">Would you recommend our service?</h3>
+                    <div class="flex space-x-6">
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="radio" name="recommend" value="yes" class="w-5 h-5 text-black">
+                            <span class="text-lg font-medium text-black">Yes, definitely</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="radio" name="recommend" value="maybe" class="w-5 h-5 text-black">
+                            <span class="text-lg font-medium text-black">Maybe</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer">
+                            <input type="radio" name="recommend" value="no" class="w-5 h-5 text-black">
+                            <span class="text-lg font-medium text-black">No</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Submit Actions -->
+                <div id="submit-actions" class="bg-white rounded-xl p-8 border border-gray-200">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center space-x-3">
+                            <input type="checkbox" id="anonymous" class="w-5 h-5 text-black">
+                            <label for="anonymous" class="text-gray-600">Submit feedback anonymously</label>
+                        </div>
+                        <div class="flex space-x-4">
+                            <button type="button" class="px-8 py-3 border border-gray-300 text-gray-600 rounded-lg font-semibold hover:bg-beige-light transition-colors">
+                                Skip Survey
+                            </button>
+                            <button type="submit" class="px-8 py-3 bg-black text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                Submit Feedback
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-white border-t border-gray-200 py-12 px-5">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-4 gap-8">
+                <div id="footer-brand">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i class="fas fa-calendar-check text-2xl text-black"></i>
+                        <h5 class="text-xl font-bold text-black">E-RDV</h5>
+                    </div>
+                    <p class="text-gray-600">Streamlining appointment management with intelligent booking solutions.</p>
+                </div>
+                <div id="footer-services">
+                    <h6 class="font-bold text-black mb-4">Services</h6>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><span class="hover:text-black cursor-pointer">Online Booking</span></li>
+                        <li><span class="hover:text-black cursor-pointer">WhatsApp Integration</span></li>
+                        <li><span class="hover:text-black cursor-pointer">Branch Management</span></li>
+                        <li><span class="hover:text-black cursor-pointer">Analytics</span></li>
+                    </ul>
+                </div>
+                <div id="footer-support">
+                    <h6 class="font-bold text-black mb-4">Support</h6>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><span class="hover:text-black cursor-pointer">Help Center</span></li>
+                        <li><span class="hover:text-black cursor-pointer">Contact Us</span></li>
+                        <li><span class="hover:text-black cursor-pointer">Documentation</span></li>
+                        <li><span class="hover:text-black cursor-pointer">Training</span></li>
+                    </ul>
+                </div>
+                <div id="footer-contact">
+                    <h6 class="font-bold text-black mb-4">Contact</h6>
+                    <div class="space-y-2 text-gray-600">
+                        <p class="flex items-center"><i class="fas fa-phone mr-2"></i>+1 (555) 123-4567</p>
+                        <p class="flex items-center"><i class="fas fa-envelope mr-2"></i>support@e-rdv.com</p>
+                        <p class="flex items-center"><i class="fas fa-map-marker-alt mr-2"></i>123 Business Ave</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-8 pt-8 text-center text-gray-600">
+                <p>&copy; 2024 E-RDV. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const ratingButtons = document.querySelectorAll('.rating-btn');
+    const starRatings = document.querySelectorAll('.star-rating');
+
+    ratingButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            ratingButtons.forEach(btn => btn.classList.remove('bg-beige-dark', 'border-black'));
+            this.classList.add('bg-beige-dark', 'border-black');
+        });
+    });
+
+    starRatings.forEach(star => {
+        star.addEventListener('click', function() {
+            const category = this.dataset.category;
+            const value = parseInt(this.dataset.value);
+            const categoryStars = document.querySelectorAll(`[data-category="${category}"]`);
+            
+            categoryStars.forEach((s, index) => {
+                if (index < value) {
+                    s.classList.remove('text-gray-300');
+                    s.classList.add('text-yellow-400');
+                } else {
+                    s.classList.remove('text-yellow-400');
+                    s.classList.add('text-gray-300');
+                }
+            });
+        });
+    });
+});
+</script>
+
+</html>

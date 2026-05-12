@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        ::-webkit-scrollbar { display: none;}
+        * { font-family: 'Poppins', sans-serif; }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'beige-light': '#FAFAE6',
+                        'beige-medium': '#F5F5DC',
+                        'beige-dark': '#EEE5DE'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-beige-light">
+
+    <!-- Header -->
+    <header id="header" class="bg-white border-b border-gray-200 p-5">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-8">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-calendar-check text-2xl text-black"></i>
+                    <h1 class="text-2xl font-bold text-black">E-RDV</h1>
+                </div>
+                <nav class="hidden md:flex space-x-6">
+
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="p-2 rounded-lg border border-gray-200 hover:bg-beige-medium">
+                    <i class="fas fa-bell text-black"></i>
+                </button>
+                <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-1.jpg" alt="User Avatar" class="w-10 h-10 rounded-full">
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="bg-beige-medium h-[600px] flex items-center">
+        <div class="max-w-7xl mx-auto px-5 grid grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <h2 class="text-5xl font-bold text-black leading-tight">Welcome to E-RDV Service Portal</h2>
+                <p class="text-xl text-gray-700 leading-relaxed">Book your appointments seamlessly through our web platform or WhatsApp. Select your preferred branch, service type, and time slot with real-time availability.</p>
+                <div class="flex space-x-4">
+                    <button class="bg-black text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+                        <i class="fas fa-calendar-plus mr-2"></i>
+                        Book Appointment
+                    </button>
+                    <button class="border border-black text-black px-8 py-4 rounded-lg font-semibold hover:bg-beige-dark transition-colors">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        WhatsApp Booking
+                    </button>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <img class="rounded-2xl shadow-lg w-full max-w-md" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/684c6939b2-6760e40ae8114658ec51.png" alt="modern appointment booking interface with calendar and clock elements, light beige theme, minimalist design" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section id="services-overview" class="py-20 px-5">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl font-bold text-black mb-4">How E-RDV Works</h3>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Simple steps to book and manage your appointments efficiently</p>
+            </div>
+            <div class="grid grid-cols-3 gap-8">
+                <div id="step-1" class="bg-white p-8 rounded-xl border border-gray-200 text-center">
+                    <div class="w-16 h-16 bg-beige-dark rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-info-circle text-2xl text-black"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-black mb-4">1. Information Collection</h4>
+                    <p class="text-gray-600">Provide your details and select your preferred branch location for personalized service.</p>
+                </div>
+                <div id="step-2" class="bg-white p-8 rounded-xl border border-gray-200 text-center">
+                    <div class="w-16 h-16 bg-beige-dark rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-clock text-2xl text-black"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-black mb-4">2. Time Slot Selection</h4>
+                    <p class="text-gray-600">Choose from available time slots based on real-time capacity and staff availability.</p>
+                </div>
+                <div id="step-3" class="bg-white p-8 rounded-xl border border-gray-200 text-center">
+                    <div class="w-16 h-16 bg-beige-dark rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-check-circle text-2xl text-black"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-black mb-4">3. Confirmation</h4>
+                    <p class="text-gray-600">Receive instant confirmation with a unique identifier and appointment details.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Actions -->
+    <section id="quick-actions" class="bg-beige-medium py-20 px-5">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-4xl font-bold text-black text-center mb-16">Quick Actions</h3>
+            <div class="grid grid-cols-2 gap-8">
+                <div id="booking-card" class="bg-white p-8 rounded-xl border border-gray-200">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-black rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-calendar-plus text-white text-xl"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-black">New Appointment</h4>
+                    </div>
+                    <p class="text-gray-600 mb-6">Book a new appointment by selecting your branch, service type, and preferred time slot.</p>
+                    <button class="w-full bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+                        Start Booking Process
+                    </button>
+                </div>
+                <div id="management-card" class="bg-white p-8 rounded-xl border border-gray-200">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-black rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-cog text-white text-xl"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-black">Manage Appointments</h4>
+                    </div>
+                    <p class="text-gray-600 mb-6">Reschedule, cancel, or view your existing appointments with ease.</p>
+                    <button class="w-full border border-black text-black py-3 rounded-lg font-semibold hover:bg-beige-dark transition-colors">
+                        Access Management
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section id="features-grid" class="py-20 px-5">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-4xl font-bold text-black text-center mb-16">Platform Features</h3>
+            <div class="grid grid-cols-4 gap-6">
+                <div id="feature-1" class="bg-white p-6 rounded-xl border border-gray-200 text-center">
+                    <i class="fas fa-mobile-alt text-3xl text-black mb-4"></i>
+                    <h5 class="font-bold text-black mb-2">Multi-Platform Access</h5>
+                    <p class="text-sm text-gray-600">Web and WhatsApp integration</p>
+                </div>
+                <div id="feature-2" class="bg-white p-6 rounded-xl border border-gray-200 text-center">
+                    <i class="fas fa-clock text-3xl text-black mb-4"></i>
+                    <h5 class="font-bold text-black mb-2">Real-Time Availability</h5>
+                    <p class="text-sm text-gray-600">Live capacity and staff updates</p>
+                </div>
+                <div id="feature-3" class="bg-white p-6 rounded-xl border border-gray-200 text-center">
+                    <i class="fas fa-bell text-3xl text-black mb-4"></i>
+                    <h5 class="font-bold text-black mb-2">Smart Reminders</h5>
+                    <p class="text-sm text-gray-600">Automated notifications</p>
+                </div>
+                <div id="feature-4" class="bg-white p-6 rounded-xl border border-gray-200 text-center">
+                    <i class="fas fa-chart-bar text-3xl text-black mb-4"></i>
+                    <h5 class="font-bold text-black mb-2">Analytics Dashboard</h5>
+                    <p class="text-sm text-gray-600">Comprehensive reporting</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Roles Section -->
+    <section id="user-roles" class="bg-beige-dark py-20 px-5">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="text-4xl font-bold text-black text-center mb-16">Platform Roles</h3>
+            <div class="grid grid-cols-2 gap-8">
+                <div id="client-role" class="bg-white p-8 rounded-xl border border-gray-200">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-user text-2xl text-black mr-3"></i>
+                        <h4 class="text-xl font-bold text-black">Client Portal</h4>
+                    </div>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><i class="fas fa-check text-black mr-2"></i>Book appointments</li>
+                        <li class="flex items-center"><i class="fas fa-check text-black mr-2"></i>Reschedule & cancel</li>
+                        <li class="flex items-center"><i class="fas fa-check text-black mr-2"></i>Receive notifications</li>
+                        <li class="flex items-center"><i class="fas fa-check text-black mr-2"></i>Track appointment status</li>
+                    </ul>
+                </div>
+                <div id="admin-role" class="bg-white p-8 rounded-xl border border-gray-200">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-user-cog text-2xl text-black mr-3"></i>
+                        <h4 class="text-xl font-bold text-black">Administrator Dashboard</h4>
+                    </div>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center"><i class="fas fa-check text-black mr-2"></i>Configure system rules</li>
+                        <li class="flex items-center"><i class="fas fa-check text-black mr-2"></i>Manage branch settings</li>
+                        <li class="flex items-center"><i class="fas fa-check text-black mr-2"></i>Oversee data analytics</li>
+                        <li class="flex items-center"><i class="fas fa-check text-black mr-2"></i>System monitoring</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-white border-t border-gray-200 py-12 px-5">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-4 gap-8">
+                <div id="footer-brand">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i class="fas fa-calendar-check text-2xl text-black"></i>
+                        <h5 class="text-xl font-bold text-black">E-RDV</h5>
+                    </div>
+                    <p class="text-gray-600">Streamlining appointment management with intelligent booking solutions.</p>
+                </div>
+                <div id="footer-services">
+                    <h6 class="font-bold text-black mb-4">Services</h6>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><span class="hover:text-black cursor-pointer">Online Booking</span></li>
+                        <li><span class="hover:text-black cursor-pointer">WhatsApp Integration</span></li>
+                        <li><span class="hover:text-black cursor-pointer">Branch Management</span></li>
+                        <li><span class="hover:text-black cursor-pointer">Analytics</span></li>
+                    </ul>
+                </div>
+                <div id="footer-support">
+                    <h6 class="font-bold text-black mb-4">Support</h6>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><span class="hover:text-black cursor-pointer">Help Center</span></li>
+                        <li><span class="hover:text-black cursor-pointer">Contact Us</span></li>
+                        <li><span class="hover:text-black cursor-pointer">Documentation</span></li>
+                        <li><span class="hover:text-black cursor-pointer">Training</span></li>
+                    </ul>
+                </div>
+                <div id="footer-contact">
+                    <h6 class="font-bold text-black mb-4">Contact</h6>
+                    <div class="space-y-2 text-gray-600">
+                        <p class="flex items-center"><i class="fas fa-phone mr-2"></i>+1 (555) 123-4567</p>
+                        <p class="flex items-center"><i class="fas fa-envelope mr-2"></i>support@e-rdv.com</p>
+                        <p class="flex items-center"><i class="fas fa-map-marker-alt mr-2"></i>123 Business Ave</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-8 pt-8 text-center text-gray-600">
+                <p>&copy; 2024 E-RDV. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
